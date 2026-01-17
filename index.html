@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="playerSetup">
+        <input id="playerOne" type="text" class="inputTag" placeholder="Player One">
+        <input id="playerTwo" type="text" class="inputTag" placeholder="Player Two">
+        <button id="startBtn">Start Game</button>
+    </div>
+
+    <div id="categorySelection">
+        <p id="roundNum"></p>
+        <select id="selectCategory">
+            <option value="music">Music</option>
+            <option value="sport_and_leisure">Sport_and_leisure</option>
+            <option value="film_and_tv">Film_and_tv</option>
+            <option value="arts_and_literature">Arts_and_literature</option>
+            <option value="history">History</option>
+            <option value="science">Science</option>
+            <option value="geography">Geography</option>
+            <option value="food_and_drink">Food_and_drink</option>
+            <option value="general_knowledge">General_knowledge</option>
+        </select>
+        <button id="startRoundBtn">Start Round</button>
+    </div>
+
+    <div id="questionGameplay">
+        <p id="roundNumDisplay"></p>
+        <p id="categoryText"></p>
+        <p id="difficultyText"></p>
+        <p id="whoseTurn"></p>
+        <p id="playerScoreOne"></p>
+        <p id="playerScoreTwo"></p>
+        <form>
+            <p id="questionText">Question text</p>
+
+            <label>
+                <input type="radio" name="option" class="optionRadio" value="">
+                <span class="optionLabel"></span>
+            </label><br>
+
+            <label>
+                <input type="radio" name="option" class="optionRadio" value="">
+                <span class="optionLabel"></span>
+            </label><br>
+
+            <label>
+                <input type="radio" name="option" class="optionRadio" value="">
+                <span class="optionLabel"></span>
+            </label><br>
+
+            <label>
+                <input type="radio" name="option" class="optionRadio" value="">
+                <span class="optionLabel"></span>
+            </label>
+        </form>
+        <p id="checkAnswerMsg"></p>
+        <button id="nextBtn">Next Button</button>
+    </div>
+
+    <div id="roundSummary">
+        <button id="nextRoundBtn">Next Round</button>
+        <button id="endGameBtn">End Game</button>
+    </div>
+
+    <div id="finalresult">
+        <p id="playerOneNameScroe"></p>
+        <p id="playerTwoNameScroe"></p>
+        <p id="winnerName"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

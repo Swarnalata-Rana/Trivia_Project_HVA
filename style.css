@@ -1,0 +1,77 @@
+body {
+    background-color: #34373b;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+#playerSetup,
+#categorySelection,
+#questionGameplay,
+#roundSummary,
+#finalresult {
+    width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 6px solid #fbc02d;
+}
+
+.inputTag,
+#selectCategory {
+    width: 100%;
+    padding: 9px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #fbc02d;
+    color: #222;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+#questionText {
+    background-color: #cec6c6;
+    padding: 10px;
+    border-left: 4px solid #fbc02d;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#whoseTurn {
+    font-weight: bold;
+    color: #fbc02d;
+}
+
+#playerScoreOne,
+#playerScoreTwo {
+    font-weight: bold;
+}
+
+#winnerName {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
