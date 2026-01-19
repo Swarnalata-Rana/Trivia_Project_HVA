@@ -52,6 +52,7 @@ let difficultyRating = {
 let nameOne = ""
 let nameTwo = ""
 startBtn.addEventListener("click", function () {
+
     nameOne = playerOne.value.trim()
     nameTwo = playerTwo.value.trim()
 
@@ -72,6 +73,7 @@ startBtn.addEventListener("click", function () {
     categorySelection.style.display = "block"
 
     roundNum.innerText = `Round: ${round}`;
+
 })
 
 startRoundBtn.addEventListener("click", function () {
@@ -88,6 +90,7 @@ startRoundBtn.addEventListener("click", function () {
 });
 
 async function fetchQuestions(category) {
+
     try {
         let easyRes = await fetch(`https://the-trivia-api.com/v2/questions?categories=${category}&difficulties=easy&limit=2`);
         let mediumRes = await fetch(`https://the-trivia-api.com/v2/questions?categories=${category}&difficulties=medium&limit=2`);
@@ -104,12 +107,14 @@ async function fetchQuestions(category) {
         categorySelection.style.display = "none";
         questionGameplay.style.display = "block";
     }
-    catch (err) {
-        console.log(err);
+    catch (error) {
+        console.log(error);
     }
+
 }
 
 function displayQuestion() {
+
     let currentQuestion = questionArray[index];
     nextBtn.disabled = true
 
@@ -121,8 +126,12 @@ function displayQuestion() {
         whoseTurn.innerText = `Who's Turn: Player 1 ${nameOne}`
     }
     else {
-        whoseTurn.innerText = `Who's Trun: Player 2 ${nameTwo}`
+        whoseTurn.innerText = `Who's Turn: Player 2 ${nameTwo}`
     }
+
+    playerScoreOne.innerText = `Player 1 ${nameOne}: ${player1Score}`;
+    playerScoreTwo.innerText = `Player 2 ${nameTwo}: ${player2Score}`;
+
     questionText.innerText = `${index + 1}: ${currentQuestion.question.text}`;
 
     displayOption()
@@ -165,11 +174,12 @@ for (let i = 0; i < optionRadio.length; i++) {
 }
 
 function answerCheck(selectedOption) {
+
     let currectAnswer = questionArray[index].correctAnswer
     let difficulty = questionArray[index].difficulty
 
     if (selectedOption === currectAnswer) {
-        checkAnswerMsg.innerText = "Currect Answer"
+        checkAnswerMsg.innerText = "Correct Answer"
         checkAnswerMsg.style.color = "green"
 
         if (index % 2 === 0) {
@@ -184,11 +194,13 @@ function answerCheck(selectedOption) {
         checkAnswerMsg.style.color = "red"
     }
 
-    playerScoreOne.innerText = `Player 1 Score: ${player1Score}`;
-    playerScoreTwo.innerText = `Player 2 Score: ${player2Score}`;
+    playerScoreOne.innerText = `Player 1 ${nameOne}: ${player1Score}`;
+    playerScoreTwo.innerText = `Player 2 ${nameTwo}: ${player2Score}`;
+
 }
 
 nextBtn.addEventListener("click", function () {
+
     index++;
     if (index >= questionArray.length) {
         questionGameplay.style.display = "none";
@@ -204,6 +216,7 @@ nextBtn.addEventListener("click", function () {
     else {
         displayQuestion();
     }
+
 });
 
 nextRoundBtn.addEventListener("click", function () {
@@ -214,6 +227,7 @@ nextRoundBtn.addEventListener("click", function () {
 
     roundSummary.style.display = "none";
     categorySelection.style.display = "block";
+
 });
 
 endGameBtn.addEventListener("click", function () {
